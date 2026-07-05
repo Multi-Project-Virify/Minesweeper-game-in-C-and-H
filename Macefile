@@ -1,0 +1,15 @@
+CC = gcc
+CFLAGS = -std=c99 -Wall -Wextra -O2
+
+SRC = main.c core.c config.c
+OUT = minesweeper
+
+all: $(OUT)
+
+$(OUT): $(SRC)
+	$(CC) $(CFLAGS) $(SRC) -o $(OUT)
+
+clean:
+	rm -f $(OUT)
+
+.PHONY: all clean
